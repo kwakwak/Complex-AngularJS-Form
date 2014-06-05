@@ -16,11 +16,11 @@
 
         <td>
             <p class="titles">{{titles.password}}</p>
-            <input type="text" ng-model="account.password" placeholder="{{titles.password}}" required/>
+            <input class="ltr" type="password" ng-model="account.password"  required ng-pattern="/^(?=.*\d)(?=.*\D).{6,}$/"/>
         </td>
         <td>
             <p class="titles">{{titles.password_conf}}</p>
-            <input type="text" ng-model="account.password_conf" placeholder="{{titles.password_conf}}" required/>
+            <input class="ltr" type="password" ng-model="account.password_conf"  required confirm="account.password"/>
         </td>
 
     </tr>
@@ -54,29 +54,34 @@
             <input type="text" ng-model="account.zip" placeholder="{{titles.zip}}" required/>
         </td>
 
+
+        <!-- email & confirm email -->
+        <td>
+            <p class="titles">{{titles.email}}</p>
+            <input class="ltr" type="text" ng-model="account.email" required check-email
+                   ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' />
+        </td>
+        <td>
+            <p class="titles">{{titles.email_conf}}</p>
+            <input class="ltr" type="text" ng-model="account.email_conf" required confirm="account.email"/>
+        </td>
+    </tr>
+
+
         <!-- order_id & order_year -->
+    <tr>
+        <td colspan="2"></td>
         <td>
             <p class="titles">{{titles.order_id}}</p>
             <input type="text" ng-model="account.order_id" placeholder="{{titles.order_id}}" required/>
         </td>
         <td>
             <p class="titles">{{titles.order_year}}</p>
-            <input type="text" ng-model="account.order_year" placeholder="{{titles.order_year}}" required/>
-        </td>
-    </tr>
-
-
-    <!-- email & confirm email -->
-    <tr>
-        <td colspan="2"></td>
-        <td>
-            <p class="titles">{{titles.email}}</p>
-            <input name="email" class="ltr" type="text" ng-model="account.email" required check-email
-                   ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' />
-        </td>
-        <td>
-            <p class="titles">{{titles.email_conf}}</p>
-            <input type="text" ng-model="account.email_conf" placeholder="{{titles.email_conf}}" required/>
+            <select type="text" ng-model="account.order_year" placeholder="{{titles.order_year}}" required/>
+                <option value="14">2014</option>
+                <option value="15">2015</option>
+                <option value="16">2016</option>
+            </select>
         </td>
 
     </tr>

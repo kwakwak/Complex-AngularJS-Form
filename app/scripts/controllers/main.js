@@ -10,9 +10,9 @@ angular.module('accountForm11App')
     // get id from url
     var id = ($location.search()).id;
     // if id exist get account data
-   // if (typeof (id)!='undefined'){
-        getData(318890).then(function(res){
-            console.log(res.data);
+    if (typeof (id)!='undefined'){
+        getData(id).then(function(res){
+            $scope.account = res.data;
         });
-    //}
+    }
   }]);
