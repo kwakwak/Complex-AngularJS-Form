@@ -24,9 +24,18 @@
 .accountTable .ng-invalid
 {
     border-color: #670000;
+    background-color: rgb(255, 249, 249);
 }
 
 .accountTable .ng-valid
 {
     border-color: green;
+}
+.accountTable button
+{
+    padding: 10px;
+    font-weight: bold;
+}
+.red{
+    color: red;
 }

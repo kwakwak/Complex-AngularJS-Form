@@ -1,5 +1,5 @@
+<form name="form.account" novalidate>
 <table class="accountTable">
-    <form name="form" novalidate>
     <!--fname & lname -->
     <tr>
         <td>
@@ -58,7 +58,7 @@
         <!-- email & confirm email -->
         <td>
             <p class="titles">{{titles.email}}</p>
-            <input class="ltr" type="text" ng-model="account.email" required check-email
+            <input name="email" class="ltr" type="text" ng-model="account.email" required check-email
                    ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' />
         </td>
         <td>
@@ -85,5 +85,15 @@
         </td>
 
     </tr>
-    </form>
+        <tr><td colspan="5">
+            <button class="btn" ng-click="create(account)" ng-disabled="!(!form.account.email.$error.exist && form.account.$valid)" >{{titles.send}}</button>
+            <!-- button disabled until email not exist && form is valid -->
+            <p>
+                <span class="red" ng-show="form.account.email.$error.exist">{{titles.err_email_exist}}</span>
+            </p>
+
+
+        </td></tr>
+
 </table>
+</form>

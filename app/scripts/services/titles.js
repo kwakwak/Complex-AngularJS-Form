@@ -15,7 +15,9 @@ angular.module('accountForm11App')
         order_id        : "מספר הזמנה",
         order_year      : "שנת הזמנה",
         question        : "שאלת ביטחון",
-        answer          : "תשובת ביטחון"
+        answer          : "תשובת ביטחון",
+        send            : "שלח טופס",
+        err_email_exist : "האימייל לא תקין או שהוא קיים במערכת."
     };
     return titles;
   });
