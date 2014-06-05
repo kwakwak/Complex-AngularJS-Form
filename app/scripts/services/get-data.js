@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('accountForm11App')
-  .factory('getData',['$http', function ($http) {
-    return $http.get('http://www.mocky.io/v2/538d8df07195c90501f1fb25');
-  }]);
+  .factory('getData',['$http','proxy', function ($http,proxy) {
+        return function(id) {
+            return $http.get(proxy,{params: {'cp':id,'server':'sh-il','method':'POST'}});
+        };
+    }]);
