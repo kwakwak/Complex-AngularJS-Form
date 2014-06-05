@@ -1,0 +1,81 @@
+<table class="accountTable">
+    <!--fname & lname -->
+    <tr>
+        <td>
+            <p class="titles">{{titles.fname}}</p>
+            <input type="text" ng-model="account.fname" placeholder="{{titles.fname}}" required/>
+        </td>
+        <td>
+            <p class="titles">{{titles.lname}}</p>
+            <input type="text" ng-model="account.lname" placeholder="{{titles.lname}}" required/>
+        </td>
+
+        <td rowspan="4" class="spacer"></td>
+        <!-- password & confirm password -->
+
+        <td>
+            <p class="titles">{{titles.password}}</p>
+            <input type="text" ng-model="account.password" placeholder="{{titles.password}}" required/>
+        </td>
+        <td>
+            <p class="titles">{{titles.password_conf}}</p>
+            <input type="text" ng-model="account.password_conf" placeholder="{{titles.password_conf}}" required/>
+        </td>
+
+    </tr>
+    <!-- street & city -->
+    <tr>
+        <td>
+            <p class="titles">{{titles.street}}</p>
+            <input type="text" ng-model="account.street" placeholder="{{titles.street}}" required/>
+        </td>
+        <td>
+            <p class="titles">{{titles.city}}</p>
+            <input type="text" ng-model="account.city" placeholder="{{titles.city}}" required/>
+        </td>
+
+        <!-- question & answer -->
+        <td>
+            <p class="titles">{{titles.question}}</p>
+            <select type="text" ng-model="account.question" placeholder="{{titles.question}}" required ng-options="c.quest for c in questions"></select>
+        </td>
+        <td>
+            <p class="titles">{{titles.answer}}</p>
+            <input type="text" ng-model="account.answer" placeholder="{{titles.answer}}" required/>
+        </td>
+
+    </tr>
+
+    <!-- zip -->
+    <tr>
+        <td colspan="2">
+            <p class="titles">{{titles.zip}}</p>
+            <input type="text" ng-model="account.zip" placeholder="{{titles.zip}}" required/>
+        </td>
+
+        <!-- order_id & order_year -->
+        <td>
+            <p class="titles">{{titles.order_id}}</p>
+            <input type="text" ng-model="account.order_id" placeholder="{{titles.order_id}}" required/>
+        </td>
+        <td>
+            <p class="titles">{{titles.order_year}}</p>
+            <input type="text" ng-model="account.order_year" placeholder="{{titles.order_year}}" required/>
+        </td>
+    </tr>
+
+
+    <!-- email & confirm email -->
+    <tr>
+        <td colspan="2"></td>
+        <td>
+            <p class="titles">{{titles.email}}</p>
+            <input type="text" ng-model="account.email" placeholder="{{titles.email}}" required/>
+        </td>
+        <td>
+            <p class="titles">{{titles.email_conf}}</p>
+            <input type="text" ng-model="account.email_conf" placeholder="{{titles.email_conf}}" required/>
+        </td>
+
+    </tr>
+</table>
