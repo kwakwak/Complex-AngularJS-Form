@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('accountForm11App')
-  .controller('MainCtrl',['$scope','getData','$location','titles','questions', function ($scope,getData,$location,titles,questions) {
+  .controller('MainCtrl',['$scope','getData','$location','titles','questions',
+                            function ($scope,getData,$location,titles,questions) {
     // get form titles
     $scope.titles = titles;
     // get security questions

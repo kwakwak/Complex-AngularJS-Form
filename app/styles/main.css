@@ -18,3 +18,15 @@
     border: solid 1px;
     width: 200px;
 }
+.accountTable .ltr{
+    direction: ltr;
+}
+.accountTable .ng-invalid
+{
+    border-color: #670000;
+}
+
+.accountTable .ng-valid
+{
+    border-color: green;
+}
