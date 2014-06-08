@@ -36,6 +36,13 @@
     padding: 10px;
     font-weight: bold;
 }
-.red{
+.err-msg {
     color: red;
+    margin-top: 2px;
+    font-size: 13px;
+}
+
+.ng-hide {
+    visibility: hidden;
+    display: block !important;
 }

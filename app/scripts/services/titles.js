@@ -17,7 +17,12 @@ angular.module('accountForm11App')
         question        : "שאלת ביטחון",
         answer          : "תשובת ביטחון",
         send            : "שלח טופס",
-        err_email_exist : "האימייל לא תקין או שהוא קיים במערכת."
+        err             : {
+            required    : "שדה חובה",
+            email_exist : "האימייל לא תקין או שהוא קיים במערכת",
+            password    : "לפחות שישה תווים המורכבים ממספרים ואותיות",
+            "match" : "שדה זה חייב להיות זהה"
+        }
     };
     return titles;
   });

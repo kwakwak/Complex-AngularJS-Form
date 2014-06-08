@@ -4,11 +4,13 @@
     <tr>
         <td>
             <p class="titles">{{titles.fname}}</p>
-            <input type="text" ng-model="account.fname" placeholder="{{titles.fname}}" required/>
+            <input name="fname" type="text" ng-model="account.fname" placeholder="{{titles.fname}}" required/>
+            <p class="err-msg" ng-show="form.account.fname.$invalid">{{titles.err.required}}</p>
         </td>
         <td>
             <p class="titles">{{titles.lname}}</p>
-            <input type="text" ng-model="account.lname" placeholder="{{titles.lname}}" required/>
+            <input name="lname" type="text" ng-model="account.lname" placeholder="{{titles.lname}}" required/>
+            <p class="err-msg" ng-show="form.account.lname.$invalid">{{titles.err.required}}</p>
         </td>
 
         <td rowspan="4" class="spacer"></td>
@@ -16,11 +18,13 @@
 
         <td>
             <p class="titles">{{titles.password}}</p>
-            <input class="ltr" type="password" ng-model="account.password"  required ng-pattern="/^(?=.*\d)(?=.*\D).{6,}$/"/>
+            <input name="password" class="ltr" type="password" ng-model="account.password"  required ng-pattern="/^(?=.*\d)(?=.*\D).{6,}$/"/>
+            <p class="err-msg" ng-show="form.account.password.$invalid">{{titles.err.password}}</p>
         </td>
         <td>
             <p class="titles">{{titles.password_conf}}</p>
-            <input class="ltr" type="password" ng-model="account.password_conf"  required confirm="account.password"/>
+            <input name="password_conf" class="ltr" type="password" ng-model="account.password_conf"  required confirm="account.password"/>
+            <p class="err-msg" ng-show="form.account.password_conf.$invalid">{{titles.err.match}}</p>
         </td>
 
     </tr>
@@ -28,21 +32,25 @@
     <tr>
         <td>
             <p class="titles">{{titles.street}}</p>
-            <input type="text" ng-model="account.street" placeholder="{{titles.street}}" required/>
+            <input name="street" type="text" ng-model="account.street" placeholder="{{titles.street}}" required/>
+            <p class="err-msg" ng-show="form.account.street.$invalid">{{titles.err.required}}</p>
         </td>
         <td>
             <p class="titles">{{titles.city}}</p>
-            <input type="text" ng-model="account.city" placeholder="{{titles.city}}" required/>
+            <input name="city" type="text" ng-model="account.city" placeholder="{{titles.city}}" required/>
+            <p class="err-msg" ng-show="form.account.city.$invalid">{{titles.err.required}}</p>
         </td>
 
         <!-- question & answer -->
         <td>
             <p class="titles">{{titles.question}}</p>
-            <select type="text" ng-model="account.question" placeholder="{{titles.question}}" required ng-options="c.quest for c in questions"></select>
+            <select name="question" type="text" ng-model="account.question" placeholder="{{titles.question}}" required ng-options="c.quest for c in questions"></select>
+            <p class="err-msg" ng-show="form.account.question.$invalid">{{titles.err.required}}</p>
         </td>
         <td>
             <p class="titles">{{titles.answer}}</p>
-            <input type="text" ng-model="account.answer" placeholder="{{titles.answer}}" required/>
+            <input name="answer" type="text" ng-model="account.answer" placeholder="{{titles.answer}}" required/>
+            <p class="err-msg" ng-show="form.account.answer.$invalid">{{titles.err.required}}</p>
         </td>
 
     </tr>
@@ -51,7 +59,8 @@
     <tr>
         <td colspan="2">
             <p class="titles">{{titles.zip}}</p>
-            <input type="text" ng-model="account.zip" placeholder="{{titles.zip}}" required/>
+            <input name="zip" type="text" ng-model="account.zip" placeholder="{{titles.zip}}" required/>
+            <p class="err-msg" ng-show="form.account.zip.$invalid">{{titles.err.required}}</p>
         </td>
 
 
@@ -60,10 +69,12 @@
             <p class="titles">{{titles.email}}</p>
             <input name="email" class="ltr" type="text" ng-model="account.email" required check-email
                    ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' />
+            <p class="err-msg" ng-show="form.account.email.$invalid">{{titles.err.email_exist}}</p>
         </td>
         <td>
             <p class="titles">{{titles.email_conf}}</p>
-            <input class="ltr" type="text" ng-model="account.email_conf" required confirm="account.email"/>
+            <input name="email_conf" class="ltr" type="text" ng-model="account.email_conf" required confirm="account.email"/>
+            <p class="err-msg" ng-show="form.account.email_conf.$invalid">{{titles.err.match}}</p>
         </td>
     </tr>
 
@@ -73,25 +84,23 @@
         <td colspan="2"></td>
         <td>
             <p class="titles">{{titles.order_id}}</p>
-            <input type="text" ng-model="account.order_id" placeholder="{{titles.order_id}}" required/>
+            <input name="order_id" type="text" ng-model="account.order_id" placeholder="{{titles.order_id}}" required/>
+            <p class="err-msg" ng-show="form.account.order_id.$invalid">{{titles.err.required}}</p>
         </td>
         <td>
             <p class="titles">{{titles.order_year}}</p>
-            <select type="text" ng-model="account.order_year" placeholder="{{titles.order_year}}" required/>
+            <select name="order_year" type="text" ng-model="account.order_year" placeholder="{{titles.order_year}}" required/>
                 <option value="14">2014</option>
                 <option value="15">2015</option>
                 <option value="16">2016</option>
             </select>
+            <p class="err-msg" ng-show="form.account.order_year.$invalid">{{titles.err.required}}</p>
         </td>
 
     </tr>
         <tr><td colspan="5">
             <button class="btn" ng-click="create(account)" ng-disabled="!(!form.account.email.$error.exist && form.account.$valid)" >{{titles.send}}</button>
             <!-- button disabled until email not exist && form is valid -->
-            <p>
-                <span class="red" ng-show="form.account.email.$error.exist">{{titles.err_email_exist}}</span>
-            </p>
-
 
         </td></tr>
 
