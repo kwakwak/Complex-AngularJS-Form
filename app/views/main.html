@@ -68,7 +68,7 @@
         <td>
             <p class="titles">{{titles.email}}</p>
             <input name="email" class="ltr" type="text" ng-model="account.email" required check-email
-                   ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' />
+                  />
             <p class="err-msg" ng-show="form.account.email.$invalid">{{titles.err.email_exist}}</p>
         </td>
         <td>
@@ -84,16 +84,17 @@
         <td colspan="2"></td>
         <td>
             <p class="titles">{{titles.order_id}}</p>
-            <input name="order_id" type="text" ng-model="account.order_id" placeholder="{{titles.order_id}}" required/>
+            <input name="order_id" type="text" ng-model="account.order_id" placeholder="{{titles.order_id}}" required maxlength="8"/>
             <p class="err-msg" ng-show="form.account.order_id.$invalid">{{titles.err.required}}</p>
         </td>
         <td>
             <p class="titles">{{titles.order_year}}</p>
-            <select name="order_year" type="text" ng-model="account.order_year" placeholder="{{titles.order_year}}" required/>
+            <select name="order_year"  ng-model="account.order_year" placeholder="{{titles.order_year}}" required>
                 <option value="14">2014</option>
                 <option value="15">2015</option>
                 <option value="16">2016</option>
             </select>
+
             <p class="err-msg" ng-show="form.account.order_year.$invalid">{{titles.err.required}}</p>
         </td>
 

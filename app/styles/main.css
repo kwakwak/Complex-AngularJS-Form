@@ -1,6 +1,5 @@
 .accountTable {
     direction: rtl;
-    margin: 0 auto;
 }
 .accountTable hr {
     margin-top: 30px;
@@ -37,9 +36,11 @@
     font-weight: bold;
 }
 .err-msg {
-    color: red;
-    margin-top: 2px;
-    font-size: 13px;
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 11px;
 }
 
 .ng-hide {

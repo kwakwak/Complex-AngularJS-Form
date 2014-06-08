@@ -6,7 +6,12 @@ angular.module('accountForm11App')
             require:'ngModel',
             restrict:'A',
             link:function (scope, el, attrs, ctrl) {
-                ctrl.$setValidity('exist', false); // default is invalid
+                if (ctrl.$viewValue=""){
+                    ctrl.$setValidity('exist', false); // default is invalid
+                } else {
+                    ctrl.$setValidity('exist', true); // default is invalid
+                }
+
                 el.bind('blur',function(){
                     if (!ctrl.$error.pattern){  // check email exists if no pattren err
                         var email=ctrl.$viewValue;
