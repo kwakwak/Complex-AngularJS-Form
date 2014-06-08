@@ -47,3 +47,7 @@
     visibility: hidden;
     display: block !important;
 }
+
+h1 {
+    float: none;
+}

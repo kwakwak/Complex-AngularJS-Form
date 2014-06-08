@@ -21,8 +21,10 @@ angular.module('accountForm11App')
             required    : "שדה חובה",
             email_exist : "האימייל לא תקין או שהוא קיים במערכת",
             password    : "לפחות שישה תווים המורכבים ממספרים ואותיות",
-            "match" : "שדה זה חייב להיות זהה"
-        }
+            "match"     : "שדה זה חייב להיות זהה",
+            "general"   : "אירעה שגיאה:"
+        },
+        success         : "הטופס נשלח בהצלחה!"
     };
     return titles;
   });

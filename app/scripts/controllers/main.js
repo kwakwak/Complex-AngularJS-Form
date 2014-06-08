@@ -6,6 +6,12 @@ angular.module('accountForm11App')
     // get form titles & init form
     $scope.titles = titles;
     $scope.form = {};
+    $scope.status={
+        sending: false,
+        success: false,
+        error  : false,
+        msg    : ''
+    };
 
     // get security questions
     questions('he-IL').then(function(res){$scope.questions = res.data.questions;});
@@ -73,9 +79,20 @@ angular.module('accountForm11App')
             console.log ('req:');
             console.log (outputObj);
 
+            $scope.status.sending=true;
+
             sendData(outputObj).then(function(res){
                 console.log ('res:');
                 console.log(res.data);
+
+                $scope.status.sending=false;
+                $scope.status.success=res.data.Success;
+                $scope.status.msg=res.data.Msg;
+                if ($scope.status.msg!='') {
+                    $scope.status.error=true;
+                }
+
+
             });
 
         }

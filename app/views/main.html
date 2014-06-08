@@ -1,4 +1,9 @@
-<form name="form.account" novalidate>
+
+<h1 ng-show="status.success" style="float:none">{{titles.success}}</h1>
+
+
+
+<form name="form.account" novalidat ng-hide="status.success">
 <table class="accountTable">
     <!--fname & lname -->
     <tr>
@@ -68,7 +73,7 @@
         <td>
             <p class="titles">{{titles.email}}</p>
             <input name="email" class="ltr" type="text" ng-model="account.email" required check-email
-                  />
+                   ng-pattern="/^(([^<>()[\]\\.,;:\s@\']+(\.[^<>()[\]\\.,;:\s@\']+)*)|(\'.+\'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/" />
             <p class="err-msg" ng-show="form.account.email.$invalid">{{titles.err.email_exist}}</p>
         </td>
         <td>
@@ -100,10 +105,15 @@
 
     </tr>
         <tr><td colspan="5">
-            <button class="btn" ng-click="create(account)" ng-disabled="!(!form.account.email.$error.exist && form.account.$valid)" >{{titles.send}}</button>
-            <!-- button disabled until email not exist && form is valid -->
+            <button class="btn" ng-click="create(account)" ng-disabled="(!(!form.account.email.$error.exist && form.account.$valid)) || status.sending" >{{titles.send}}</button>
+            <img ng-show="status.sending" src="images/ajax-loader.gif">
+            <!-- button disabled until email not exist && form is valid or status is sending -->
+
+            <p ng-show="status.error">{{titles.err.general}}</p>
+            <p ng-show="status.error">{{status.msg}}</p>
 
         </td></tr>
 
 </table>
 </form>
+
