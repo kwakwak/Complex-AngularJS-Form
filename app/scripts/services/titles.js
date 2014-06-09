@@ -14,8 +14,8 @@ angular.module('accountForm11App')
         email_conf      : "אימות אימייל",
         order_id        : "מספר הזמנה",
         order_year      : "שנת הזמנה",
-        question        : "שאלת ביטחון",
-        answer          : "תשובת ביטחון",
+        question        : "שאלת אבטחה",
+        answer          : "תשובת אבטחה",
         send            : "שלח טופס",
         err             : {
             required    : "שדה חובה",

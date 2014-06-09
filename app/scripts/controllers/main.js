@@ -46,7 +46,7 @@ angular.module('accountForm11App')
             // build output object
             var outputObj =
             {
-                'server' : 'cloud-dev'                , //server
+                'server' : 'cloud'                    , //server
                 'method' : 'POST'                     , //method
                 'action' : 'addusersf'                , //action -sf
                 'a'      : 'r'                        , //action - cloud
