@@ -36,14 +36,18 @@
     <!-- street & city -->
     <tr>
         <td>
-            <p class="titles">{{titles.street}}</p>
-            <input name="street" type="text" ng-model="account.street" placeholder="{{titles.street}}" required/>
-            <p class="err-msg" ng-show="form.account.street.$invalid">{{titles.err.required}}</p>
+            <div ng-show="show.steet">
+                <p class="titles">{{titles.street}}</p>
+                <input name="street" type="text" ng-model="account.street" placeholder="{{titles.street}}" ng-required="show.steet"/>
+                <p class="err-msg" ng-show="form.account.street.$invalid">{{titles.err.required}}</p>
+            </div>
         </td>
         <td>
-            <p class="titles">{{titles.city}}</p>
-            <input name="city" type="text" ng-model="account.city" placeholder="{{titles.city}}" required/>
-            <p class="err-msg" ng-show="form.account.city.$invalid">{{titles.err.required}}</p>
+            <div ng-show="show.city">
+                <p class="titles">{{titles.city}}</p>
+                <input name="city" type="text" ng-model="account.city" placeholder="{{titles.city}}" ng-required="show.city"/>
+                <p class="err-msg" ng-show="form.account.city.$invalid">{{titles.err.required}}</p>
+            </div>
         </td>
 
         <!-- question & answer -->
@@ -63,9 +67,11 @@
     <!-- zip -->
     <tr>
         <td colspan="2">
-            <p class="titles">{{titles.zip}}</p>
-            <input name="zip" type="text" ng-model="account.zip" placeholder="{{titles.zip}}" required/>
-            <p class="err-msg" ng-show="form.account.zip.$invalid">{{titles.err.required}}</p>
+            <div ng-show="show.zip">
+                <p class="titles">{{titles.zip}}</p>
+                <input name="zip" type="text" ng-model="account.zip" placeholder="{{titles.zip}}" ng-required="show.zip"/>
+                <p class="err-msg" ng-show="form.account.zip.$invalid">{{titles.err.required}}</p>
+            </div>
         </td>
 
 

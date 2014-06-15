@@ -2,5 +2,5 @@
 
 angular.module('accountForm11App')
   .factory('proxy', function () {
-    return 'proxy.php';
+    return 'http://www.smartheart.co.il/proxy.php';
   });

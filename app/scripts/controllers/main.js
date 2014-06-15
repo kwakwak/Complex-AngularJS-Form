@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('accountForm11App')
-  .controller('MainCtrl',['$scope','getData','$location','titles','questions','sendData','checkEmail','$filter',
-                            function ($scope,getData,$location,titles,questions,sendData,checkEmail,$filter) {
+  .controller('MainCtrl',['$scope','getData','$location','titles','questions','sendData','checkEmail','$filter','show',
+                            function ($scope,getData,$location,titles,questions,sendData,checkEmail,$filter,show) {
     // get form titles & init form
     $scope.titles = titles;
+    $scope.show = show;
     $scope.form = {};
     $scope.status={
         sending: false,
